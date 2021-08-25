@@ -1,15 +1,16 @@
 module.exports = function check(str, bracketsConfig) {
+  
   if (str.length % 2 == 1) {
     return false;
   }
-  let stack = new Array();
-  for ( let i = 0; i <= str.length - 1; i++) {
-    let find = false;
-    for ( let j = 0; j< bracketsConfig.lengyh; j++) {
+  var stack = new Array();
+  for ( var i = 0; i <= str.length - 1; i++) {
+    var find = false;
+    for ( var j = 0; j < bracketsConfig.length; j++) {
       if (str[i] == bracketsConfig[j][0]) {
         find = true;
         if ( bracketsConfig[j][0] == bracketsConfig[j][1]) {
-          if (stack[stack.length -1] == bracketsConfig[j][0]) {
+          if (stack[stack.length - 1] == bracketsConfig[j][0]) {
             stack.pop();
             break;
           }
